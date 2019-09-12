@@ -1,0 +1,9 @@
+/Users/lcastro/projetos/repositorio-privado/movimentacao_bancaria/src/main/java/com/movimentacaobancaria/repository/FileRepository.java
+/Users/lcastro/projetos/repositorio-privado/movimentacao_bancaria/src/main/java/com/movimentacaobancaria/UseCase/PaymentSourceException.java
+/Users/lcastro/projetos/repositorio-privado/movimentacao_bancaria/src/main/java/com/movimentacaobancaria/entities/BankingMovement.java
+/Users/lcastro/projetos/repositorio-privado/movimentacao_bancaria/src/main/java/com/movimentacaobancaria/UseCase/ExpensesByCategoryUseCase.java
+/Users/lcastro/projetos/repositorio-privado/movimentacao_bancaria/src/main/java/com/movimentacaobancaria/UseCase/TipoRepository.java
+/Users/lcastro/projetos/repositorio-privado/movimentacao_bancaria/src/main/java/com/movimentacaobancaria/entities/PaymentBankingMovement.java
+/Users/lcastro/projetos/repositorio-privado/movimentacao_bancaria/src/main/java/com/movimentacaobancaria/App.java
+/Users/lcastro/projetos/repositorio-privado/movimentacao_bancaria/src/main/java/com/movimentacaobancaria/UseCase/PaymentListUseCase.java
+/Users/lcastro/projetos/repositorio-privado/movimentacao_bancaria/src/main/java/com/movimentacaobancaria/repository/IFileRepository.java

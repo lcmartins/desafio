@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="issues">
+    <option name="index">
+      <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/bcpf_termos_investimentos/JavaSource/br/com/bradesco/mobile/termosinvestimentos/action/Direciona.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/bcpf_termos_investimentos/JavaSource/br/com/bradesco/mobile/termosinvestimentos/logging/negocio/ConsultaTermosPendentesStrategy.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/bcpf_termos_investimentos/JavaSource/br/com/bradesco/mobile/tokentancode/apresentacao/TokenTanCodeConsultaBaseTermosInvestimentosAction.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/bcpf_termos_investimentos/config/CI/logConvertersInfra.properties">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/cinv-java-servlet/cinv/war/cinv/JavaSource/cinv/capn/servlets/ConfirmarAplicacaoCapnServlet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/cinv-java-servlet/cinv/war/cinv/JavaSource/cinv/capn/servlets/ConfirmarAplicacaoCdbFidelidadeCapnServlet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/cinv-java-servlet/cinv/war/cinv/JavaSource/cinv/capn/servlets/ConsultaCapnNavigationServlet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/cinv-java-servlet/cinv/war/cinv/JavaSource/cinv/capn/servlets/RecompraTitulosCapnServletII.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/cinv-java-servlet/cinv/war/cinv/JavaSource/cinv/cefi/servlets/ResgatesEfetivaCefiServlet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/cinv-java-servlet/cinv/war/cinv/JavaSource/cinv/ivli/investimentos/servlets/ConsultaInvestimentosOperationServlet.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/cinv-java-servlet/cinv/war/cinv/JavaSource/cinv/ivli/investimentos/utils/IvliUtils.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/cinv-java-servlet/cinv/war/cinv/JavaSource/cinv/util/EnvioPushUtil.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/cinv-srv-termos-ctrl-pendencias/src/main/java/com/br/bradesco/controle/pendencias/core/usecase/TipoConsultaPendenciaEnum.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/mobilepf-bcpf-core/WebContent/WEB-INF/lib/logCanalInternet.jar!/br/com/bradesco/web/service/provider/log/layout/CanalInternetPatternLayout.class">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/mobilepf-bcpf-core/WebContent/WEB-INF/lib/mb_transf_prepago_servico.jar!/br/com/bradesco/transacao/SaidaPrePago.class">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/SWORD/projects/mobilepf-bcpf-core/WebContent/WEB-INF/lib/mb_transf_prepago_servico.jar!/br/com/bradesco/transferenciaprepago/util/BaseConstantes.class">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Movimentacao/src/com/lcmartins/repository/dados.log">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/menu">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/menu.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pom.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/App.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/ExpensesByCategoryUseCase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/ListPaymentOrderedUseCase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/ListPaymentsUseCase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/PaymentListUseCase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/ReadDataUseCase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/ReadPaymentUseCase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/TipoRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/entities/BankingMovement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/entities/Moeda.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/entities/Movimentacao.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/entities/MovimentacaoPagamento.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/entities/Pagamento.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/entities/PagamentoPagamento.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/entities/Payment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/entities/PaymentBankingMovement.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/entities/Recebimento.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/repository/FileRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/repository/IFileRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/repository/IRepository.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/target/menu.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/a.dummy">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

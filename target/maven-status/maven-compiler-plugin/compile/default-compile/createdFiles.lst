@@ -1,0 +1,12 @@
+com/movimentacaobancaria/repository/IFileRepository.class
+com/movimentacaobancaria/UseCase/PaymentListUseCase.class
+com/movimentacaobancaria/UseCase/ExpensesByCategoryUseCase.class
+com/movimentacaobancaria/UseCase/PaymentSourceException.class
+com/movimentacaobancaria/entities/PaymentBankingMovement.class
+com/movimentacaobancaria/entities/PaymentBankingMovement$1.class
+com/movimentacaobancaria/entities/PaymentBankingMovement$Builder.class
+com/movimentacaobancaria/UseCase/TipoRepository.class
+com/movimentacaobancaria/entities/BankingMovement.class
+com/movimentacaobancaria/App.class
+com/movimentacaobancaria/repository/FileRepository.class
+com/movimentacaobancaria/entities/BankingMovement$Builder.class
