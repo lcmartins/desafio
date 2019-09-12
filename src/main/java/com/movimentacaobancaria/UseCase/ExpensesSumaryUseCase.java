@@ -15,8 +15,9 @@ public class ExpensesSumaryUseCase {
 
     public Map<String, Double> group(List<BankingMovement> movements, GroupExpenseStrategy groupExpenseStrategy) {
         Map<String, Double> expenses = new HashMap<>();
+
         movements.stream().forEach(movement->{
-            if(movement.getValor() < 0.0) {
+            if(isPayment(movement)) {
                 PaymentBankingMovement paymentBankingMovement = (PaymentBankingMovement)movement;
                 String key = groupExpenseStrategy.getKey(paymentBankingMovement);
                 key = Normalizer
@@ -34,7 +35,12 @@ public class ExpensesSumaryUseCase {
                 }
             }
         });
+
         return expenses;
+    }
+
+    private boolean isPayment(BankingMovement movement) {
+        return movement.getValor() < 0.0;
     }
 
     public Pair<String, Double> getMoreExpensiveCategory(Map<String, Double> expenses) {
