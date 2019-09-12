@@ -93,6 +93,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/.gitignore">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/menu">
           <value>
             <set />
@@ -113,7 +118,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/Helpers/PaymentMovementHelper.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/ExpensesByCategoryUseCase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/GroupByCategoryStrategy.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/GroupByMonthStrategy.java">
           <value>
             <set />
           </value>
@@ -124,6 +144,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/ListPaymentsUseCase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/MoreExpenseCategoryUseCase.java">
           <value>
             <set />
           </value>
@@ -139,6 +164,21 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/ReadPaymentUseCase.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/Strategy/GroupByCategoryStrategy.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/Strategy/GroupByMonthStrategy.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/movimentacaobancaria/UseCase/Strategy/GroupExpenseStrategy.java">
           <value>
             <set />
           </value>
@@ -209,6 +249,36 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/target/menu.sh">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../starteam/EF 2018-0451920-5-004_V6/EF 2018-0451920-5-004_V6/3 - Fontes/bcpf/war/bcpf_termos_investimentos/config/DEV/log4j-catalog.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../starteam/EF 2018-0451920-5-004_V6/EF 2018-0451920-5-004_V6/3 - Fontes/bcpf/war/bcpf_termos_investimentos/config/PR/log4j-catalog.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../starteam/EF 2018-0451920-5-004_V6/EF 2018-0451920-5-004_V6/3 - Fontes/bcpf/war/bcpf_termos_investimentos/config/TD/log4j-catalog.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../starteam/EF 2018-0451920-5-004_V6/EF 2018-0451920-5-004_V6/3 - Fontes/bcpf/war/bcpf_termos_investimentos/config/TH/log4j-catalog.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../starteam/EF 2018-0451920-5-004_V6/EF 2018-0451920-5-004_V6/3 - Fontes/bcpf/war/bcpf_termos_investimentos/config/TI/log4j-catalog.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../starteam/EF 2018-0451920-5-004_V6/EF 2018-0451920-5-004_V6/3 - Fontes/bcpf/war/bcpf_termos_investimentos/config/TU/log4j-catalog.xml">
           <value>
             <set />
           </value>
