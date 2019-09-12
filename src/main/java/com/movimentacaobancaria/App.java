@@ -1,6 +1,6 @@
 package com.movimentacaobancaria;
 
-import com.movimentacaobancaria.UseCase.ExpensesByCategoryUseCase;
+import com.movimentacaobancaria.UseCase.ExpensesSumaryUseCase;
 import com.movimentacaobancaria.UseCase.PaymentSourceException;
 import com.movimentacaobancaria.UseCase.PaymentListUseCase;
 import com.movimentacaobancaria.UseCase.Strategy.GroupByCategoryStrategy;
@@ -9,18 +9,14 @@ import com.movimentacaobancaria.UseCase.Strategy.GroupExpenseStrategy;
 import com.movimentacaobancaria.entities.BankingMovement;
 import com.movimentacaobancaria.repository.FileRepository;
 import javafx.util.Pair;
-
 import java.util.List;
 import java.util.Map;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
-
-    public static final String TOTAL_LABEL = "TOTAL:            ";
+    private static final String TOTAL_LABEL = "TOTAL:            ";
+    private static final String VALUE_SPENT_BY = "VALOR GASTO POR: ";
+    private static final String CUSTOMER_TOTAL_SPENT = "TOTAL DE GASTOS DO CLIENTE: ";
 
     public static void main(String[] args ) {
         PaymentListUseCase readPaymentUseCase = new PaymentListUseCase(new FileRepository());
@@ -31,7 +27,7 @@ public class App
                 try {
                     option = Integer.parseInt(args[0]);
                 } catch (Exception e){
-                    System.out.println("erro setando argumentos escolha entre 1 e 3");
+                    System.out.println(e.fillInStackTrace().getMessage());
                     return;
                 }
             }
@@ -46,7 +42,7 @@ public class App
             } else if(option == 4) {
                 printMoreExpensive(bankingMovements, new GroupByMonthStrategy());
             } else if(option == 5){
-                System.out.println("TOTAL DE GASTOS DO CLIENTE: " + getTotalSpent(bankingMovements));
+                System.out.println(CUSTOMER_TOTAL_SPENT + getTotalSpent(bankingMovements));
             }
         } catch (PaymentSourceException e) {
             System.out.println(e.getFriendlyMessage());
@@ -61,20 +57,20 @@ public class App
         });
     }
     private static void printExpensesByCatetory(List<BankingMovement> bankingMovements) {
-        Map<String, Double> expenses = getStringDoubleMap(bankingMovements);
+        Map<String, Double> expenses = getPaymentsGrouped(bankingMovements);
 
         for (Map.Entry<String, Double> entry : expenses.entrySet()) {
-            System.out.println("VALOR GASTO POR: " + entry.getKey() + " -> " + entry.getValue());
+            System.out.println(VALUE_SPENT_BY + entry.getKey() + " -> " + entry.getValue());
         }
     }
 
-    private static Map<String, Double> getStringDoubleMap(List<BankingMovement> bankingMovements) {
-        ExpensesByCategoryUseCase expensesByCategoryUseCase = new ExpensesByCategoryUseCase();
+    private static Map<String, Double> getPaymentsGrouped(List<BankingMovement> bankingMovements) {
+        ExpensesSumaryUseCase expensesByCategoryUseCase = new ExpensesSumaryUseCase();
         return expensesByCategoryUseCase.group(bankingMovements, new GroupByCategoryStrategy());
     }
 
     private static void printMoreExpensive(List<BankingMovement> bankingMovements, GroupExpenseStrategy groupExpenseStrategy) {
-        ExpensesByCategoryUseCase expensesByCategoryUseCase = new ExpensesByCategoryUseCase();
+        ExpensesSumaryUseCase expensesByCategoryUseCase = new ExpensesSumaryUseCase();
         Map<String, Double> expenses = expensesByCategoryUseCase.group(bankingMovements, groupExpenseStrategy);
         Pair<String, Double> moreExpensiveCategory = expensesByCategoryUseCase.getMoreExpensiveCategory(expenses);
 
@@ -83,7 +79,7 @@ public class App
     }
 
     private static Double getTotalSpent(List<BankingMovement> bankingMovements) {
-        Map<String, Double> expenses = getStringDoubleMap(bankingMovements);
+        Map<String, Double> expenses = getPaymentsGrouped(bankingMovements);
         return expenses.values().stream().reduce(0.0, (total, current) -> total + current );
     }
 }

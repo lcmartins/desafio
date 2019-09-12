@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ExpensesByCategoryUseCase {
+public class ExpensesSumaryUseCase {
 
     private static final String UNCATEGORIZED_IDENTIFIER = "UNCATEGORIZED";
 

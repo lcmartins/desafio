@@ -1,25 +1,24 @@
 #!/usr/bin/env bash
 
-function _printAllOrdered(){
+function printAllOrdered(){
     java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 1
 }
 
-function _printAllGroupedByCategory(){
+function printAllGroupedByCategory(){
     java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 2
 }
 
-function _printMoreExpensiveCategory(){
+function printMoreExpensiveCategory(){
     java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 3
 }
 
-function _printMoreExpensiveMonth(){
+function printMoreExpensiveMonth(){
     java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 4
 }
 
-function _printTotalExpended(){
+function printTotalExpended(){
     java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 5
 }
-
 
 
 function _showOptions () {
@@ -43,11 +42,11 @@ function _showOptions () {
         read option
         case ${option} in
 
-            1) _printAllOrdered; exit 0 ;;
-            2) _printAllGroupedByCategory; exit 0 ;;
-            3) _printMoreExpensiveCategory; exit 0 ;;
-            4) _printMoreExpensiveMonth; exit 0 ;;
-            5) _printTotalExpended; exit 0 ;;
+            1) printAllOrdered; exit 0 ;;
+            2) printAllGroupedByCategory; exit 0 ;;
+            3) printMoreExpensiveCategory; exit 0 ;;
+            4) printMoreExpensiveMonth; exit 0 ;;
+            5) printTotalExpended; exit 0 ;;
             6)  echo "Fechou"; exit 0;;
             *)  echo "Fechou"; exit 10;;
         esac
