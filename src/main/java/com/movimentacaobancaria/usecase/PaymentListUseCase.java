@@ -18,7 +18,7 @@ public class PaymentListUseCase {
 
     public List<BankingMovement> listPayments() throws IOException {
         List<BankingMovement> bankingMovementResult = this.paymentListGateway.listPayments();
-        Collections.sort(bankingMovementResult);
+        Collections.sort(bankingMovementResult, Collections.reverseOrder());
         return bankingMovementResult;
     }
 

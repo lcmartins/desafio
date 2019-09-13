@@ -39,7 +39,7 @@ function showOptions () {
         echo "|||||||||||||||||||||||||||||                        |||||||||||||||||||||||||||||||||"
         echo ""
         echo "1 - Imprimir movimentacoes ordenadas por data"
-        echo "2 - Imprimir movimentacoses agrupadas por categoria"
+        echo "2 - Imprimir movimentacoes agrupadas por categoria"
         echo "3 - Imprimir categoria com mais gastos"
         echo "4 - Imprimir mes com mais gastos"
         echo "5 - Imprimir total de gastos"
