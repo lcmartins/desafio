@@ -1,8 +1,11 @@
 package com.movimentacaobancaria.usecase;
 
+import com.movimentacaobancaria.gateway.PaymentListGateway;
+import com.movimentacaobancaria.repository.IFileRepository;
 import com.movimentacaobancaria.usecase.Strategy.GroupExpenseStrategy;
 import com.movimentacaobancaria.entities.BankingMovement;
 import com.movimentacaobancaria.entities.PaymentBankingMovement;
+import javafx.util.Pair;
 import java.text.Normalizer;
 import java.util.HashMap;
 import java.util.List;
@@ -11,8 +14,17 @@ import java.util.Map;
 public class ExpensesSumaryUseCase {
 
     private static final String UNCATEGORIZED_IDENTIFIER = "UNCATEGORIZED";
+    private PaymentListGateway paymentListGateway;
+    private IFileRepository fileRepository;
+    private List<BankingMovement> movements;
 
-    public Map<String, Double> group(List<BankingMovement> movements, GroupExpenseStrategy groupExpenseStrategy) {
+    public ExpensesSumaryUseCase(IFileRepository fileRepository) {
+        this.fileRepository = fileRepository;
+        this.paymentListGateway = new PaymentListGateway(this.fileRepository);
+    }
+
+    public Map<String, Double> group(GroupExpenseStrategy groupExpenseStrategy) throws Exception {
+        movements = this.paymentListGateway.listPayments();
         Map<String, Double> expenses = new HashMap<>();
 
         movements.stream().forEach(movement->{

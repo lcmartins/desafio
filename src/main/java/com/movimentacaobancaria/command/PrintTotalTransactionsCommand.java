@@ -1,21 +1,18 @@
 package com.movimentacaobancaria.command;
 
 import com.movimentacaobancaria.helpers.PaymentMovementHelper;
+import com.movimentacaobancaria.repository.FileRepository;
 import com.movimentacaobancaria.usecase.GetTotalTransactionsUseCase;
-import com.movimentacaobancaria.entities.BankingMovement;
-
-import java.util.List;
 
 public class PrintTotalTransactionsCommand extends BankingMovementCommand {
 
-    public PrintTotalTransactionsCommand() { }
+    private static final String TOTAL_OF_TRANSACTIONS_MSG = "   TOTAL OF TRANSACTIONS";
+    private static final String TOTAL_OF_TRANSACTIONS_MESSAGE_FORMAT = "Total of transactions: %s";
 
     @Override
     public void execute() throws Exception {
-        List<BankingMovement> bankingMovements = getBankingMovements();
-        Double total = new GetTotalTransactionsUseCase().get(bankingMovements);
-        PaymentMovementHelper.printHeader("   TOTAL OF TRANSACTIONS");
-        PaymentMovementHelper.print(String.format("Total of transactions: %s", total));
+        Double total = new GetTotalTransactionsUseCase(new FileRepository()).getTotalTransactios();
+        PaymentMovementHelper.printHeader(TOTAL_OF_TRANSACTIONS_MSG);
+        PaymentMovementHelper.print(String.format(TOTAL_OF_TRANSACTIONS_MESSAGE_FORMAT, total));
     }
-
 }

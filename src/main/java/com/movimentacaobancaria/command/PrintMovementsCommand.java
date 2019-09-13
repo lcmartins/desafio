@@ -6,7 +6,6 @@ import com.movimentacaobancaria.entities.BankingMovement;
 import java.util.List;
 
 public class PrintMovementsCommand extends BankingMovementCommand {
-    public PrintMovementsCommand() { }
 
     @Override
     public void execute() throws Exception  {

@@ -1,21 +1,19 @@
 package com.movimentacaobancaria.usecase;
 
-import com.movimentacaobancaria.helpers.PaymentMovementHelper;
+import com.movimentacaobancaria.gateway.PaymentListGateway;
 import com.movimentacaobancaria.entities.BankingMovement;
-import com.movimentacaobancaria.entities.PaymentBankingMovement;
 import com.movimentacaobancaria.repository.IFileRepository;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class PaymentListUseCase {
     private IFileRepository repository;
-
+    PaymentListGateway paymentListGateway;
     public PaymentListUseCase(IFileRepository fileRepository) {
         this.repository = fileRepository;
+        this.paymentListGateway = new PaymentListGateway(this.repository);
     }
 
     private String getIndexValue(String[] values, int index) {
@@ -23,37 +21,8 @@ public class PaymentListUseCase {
     }
 
     public List<BankingMovement> listPayments() throws IOException {
-        List<String[]> fileResult = this.repository.readFile();
-        List<BankingMovement> bankingMovementResult = new ArrayList<>();
-
-        fileResult.stream().filter(line -> fileResult.indexOf(line) > 0 && line.length > 0).forEach(line -> {
-            String rawValue = getIndexValue(line, 2);
-            String descriptionValue = getIndexValue(line, 1);
-            String rawDate = getIndexValue(line, 0);
-            LocalDate sortableDate = PaymentMovementHelper.buildSortableDate(rawDate);
-
-            BankingMovement bankingMovement;
-
-            if (isReceipt(rawValue)) {
-                bankingMovement = new BankingMovement.Builder(rawDate)
-                        .withDescription(descriptionValue)
-                        .withValue(rawValue)
-                        .withMoeda()
-                        .withSortableDate(sortableDate)
-                        .build();
-            } else {
-                String rawCategory = getIndexValue(line, 3);
-                bankingMovement = new PaymentBankingMovement.Builder(rawDate)
-                        .withDescription(descriptionValue)
-                        .withValue(rawValue)
-                        .withCategoria(rawCategory)
-                        .withMoeda()
-                        .withSortableDate(sortableDate)
-                        .build();
-            }
-            bankingMovementResult.add(bankingMovement);
-        });
-         Collections.sort(bankingMovementResult);
+        List<BankingMovement> bankingMovementResult = this.paymentListGateway.listPayments();
+        Collections.sort(bankingMovementResult);
         return bankingMovementResult;
     }
 
