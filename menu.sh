@@ -20,6 +20,9 @@ function printTotalExpended(){
     java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 5
 }
 
+function printTotalTransactions(){
+    java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 6
+}
 
 function _showOptions () {
 
@@ -36,7 +39,8 @@ function _showOptions () {
         echo "3 - Imprimir categoria com mais gastos"
         echo "4 - Imprimir mes com mais gastos"
         echo "5 - Imprimir total de gastos"
-        echo "6 - Sair"
+        echo "6 - Imprimir total de transações"
+        echo "7 - Sair"
         echo ""
         echo "Digite a opção: "
         read option
@@ -47,7 +51,8 @@ function _showOptions () {
             3) printMoreExpensiveCategory; exit 0 ;;
             4) printMoreExpensiveMonth; exit 0 ;;
             5) printTotalExpended; exit 0 ;;
-            6)  echo "Fechou"; exit 0;;
+            6) printTotalTransactions; exit 0 ;;
+            7)  echo "Fechou"; exit 0;;
             *)  echo "Fechou"; exit 10;;
         esac
     done

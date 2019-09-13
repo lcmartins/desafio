@@ -55,4 +55,15 @@ public class PaymentMovementHelper {
         dataBuilder.append(day);
         return LocalDate.parse(dataBuilder.toString());
     }
+
+    public static void print(String message) {
+        System.out.println(message);
+    }
+
+    public static void printHeader(String header) {
+        PaymentMovementHelper.print("|||||||||||||||||||||||||||||                        |||||||||||||||||||||||||||||||||");
+        PaymentMovementHelper.print(header);
+        PaymentMovementHelper.print("|||||||||||||||||||||||||||||                        |||||||||||||||||||||||||||||||||");
+    }
+
 }

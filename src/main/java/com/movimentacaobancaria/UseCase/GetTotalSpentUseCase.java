@@ -1,16 +1,15 @@
 package com.movimentacaobancaria.UseCase;
 
 import com.movimentacaobancaria.entities.BankingMovement;
-
 import java.util.List;
+import java.util.Map;
 
 public class GetTotalSpentUseCase {
-
-    public Double getTotalTransactions(List<BankingMovement> bankingMovements ) {
-        Double total = 0.0;
-        for (BankingMovement payment: bankingMovements) {
-            total += Math.abs(payment.getValor());
-        }
-        return total;
+    public  Double get(List<BankingMovement> bankingMovements, Map<String, Double> expenses) {
+        Double totalSpent = expenses
+                .values()
+                .stream()
+                .reduce(0.0, (total, current) -> total + current);
+        return totalSpent;
     }
 }

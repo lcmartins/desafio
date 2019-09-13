@@ -22,7 +22,7 @@ public class PaymentListUseCase {
         return values.length > index ? values[index] : "";
     }
 
-    public List<BankingMovement> getData() throws IOException {
+    public List<BankingMovement> listPayments() throws IOException {
         List<String[]> fileResult = this.repository.readFile();
         List<BankingMovement> bankingMovementResult = new ArrayList<>();
 

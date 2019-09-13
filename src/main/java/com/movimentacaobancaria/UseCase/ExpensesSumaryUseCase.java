@@ -3,7 +3,6 @@ package com.movimentacaobancaria.UseCase;
 import com.movimentacaobancaria.UseCase.Strategy.GroupExpenseStrategy;
 import com.movimentacaobancaria.entities.BankingMovement;
 import com.movimentacaobancaria.entities.PaymentBankingMovement;
-import javafx.util.Pair;
 import java.text.Normalizer;
 import java.util.HashMap;
 import java.util.List;
@@ -42,17 +41,4 @@ public class ExpensesSumaryUseCase {
     private boolean isPayment(BankingMovement movement) {
         return movement.getValor() < 0.0;
     }
-
-    public Pair<String, Double> getMoreExpensiveCategory(Map<String, Double> expenses) {
-        Pair<String, Double> moreExpensiveCategory = new Pair("", 0.0);
-        for (Map.Entry<String, Double> category : expenses.entrySet()) {
-            String key = category.getKey().toUpperCase();
-            Double value = category.getValue();
-            if(value < moreExpensiveCategory.getValue()) {
-                moreExpensiveCategory = new Pair<>(key, value);
-            }
-        }
-        return moreExpensiveCategory;
-    }
-
 }
