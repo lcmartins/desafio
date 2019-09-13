@@ -61,7 +61,8 @@ public class PaymentBankingMovement extends BankingMovement {
     }
     @Override
     public String toString() {
-        return "{\"data\":\"" + this.getData() + "\""+
+        return  "{\"id\":\"" + this.getId() + "\"" +
+                ",\"data\":\"" + this.getData() + "\""+
                 ", \"descricao\":\"" + this.getDescricao()+ "\"" +
                 ", \"moeda\":\"" + this.getMoeda()+ "\"" +
                 ", \"valor\":\"" + this.getValor() + "\"" +

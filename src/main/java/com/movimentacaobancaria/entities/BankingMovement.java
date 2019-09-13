@@ -8,6 +8,8 @@ public class BankingMovement implements Comparable<BankingMovement> {
     private String moeda;
     private Double valor;
     private LocalDate sortableDate;
+    //Needed when sending to api
+    private Integer id;
 
     public String getData() {
         return data;
@@ -27,6 +29,14 @@ public class BankingMovement implements Comparable<BankingMovement> {
         return sortableDate;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public BankingMovement(String data, String descricao, String valor, String moeda, LocalDate sortableDate) {
         super();
         this.data = data;
@@ -38,7 +48,8 @@ public class BankingMovement implements Comparable<BankingMovement> {
 
     @Override
     public String toString() {
-        return "{\"data\":\"" + this.getData() + "\""+
+        return "{\"id\":\"" + this.getId() + "\"" +
+                ",\"data\":\"" + this.getData() + "\""+
                 ", \"descricao\":\"" + this.getDescricao()+ "\"" +
                 ", \"moeda\":\"" + this.getMoeda()+ "\"" +
                 ", \"valor\":\"" + this.getValor() + "\"" +

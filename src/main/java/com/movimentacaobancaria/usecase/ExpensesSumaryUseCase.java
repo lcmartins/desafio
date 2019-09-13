@@ -5,7 +5,6 @@ import com.movimentacaobancaria.repository.IFileRepository;
 import com.movimentacaobancaria.usecase.Strategy.GroupExpenseStrategy;
 import com.movimentacaobancaria.entities.BankingMovement;
 import com.movimentacaobancaria.entities.PaymentBankingMovement;
-import javafx.util.Pair;
 import java.text.Normalizer;
 import java.util.HashMap;
 import java.util.List;

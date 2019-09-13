@@ -7,15 +7,15 @@ import com.movimentacaobancaria.repository.IFileRepository;
 import java.util.List;
 
 
-public class GetTotalTransactionsUseCase {
+public class CollectTotalTransactionsUseCase {
     private PaymentListGateway paymentListGateway;
     private IFileRepository fileRepository;
 
-    public GetTotalTransactionsUseCase(IFileRepository fileRepository) {
+    public CollectTotalTransactionsUseCase(IFileRepository fileRepository) {
         this.paymentListGateway = new PaymentListGateway(fileRepository);
     }
 
-    public Double getTotalTransactios() throws Exception {
+    public Double get() throws Exception {
         List<BankingMovement> bankingMovements = this.paymentListGateway.listPayments();
         double total = 0.0;
         for (BankingMovement payment: bankingMovements) {

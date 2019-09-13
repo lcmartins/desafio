@@ -19,7 +19,7 @@ public class PrintMoreExpensiveCommand extends BankingMovementCommand {
     @Override
     public void execute() throws Exception {
         Pair<String, Double> moreExpensiveCategory = new CollectMoreExpensiveUseCase(new FileRepository())
-                .collectMoreExpensive(this.groupExpenseStrategy);
+                .get(this.groupExpenseStrategy);
         PaymentMovementHelper.printHeader(EMPTY_STRING + this.groupExpenseStrategy.getCategoryDescription() + moreExpensiveCategory.getKey());
         PaymentMovementHelper.print(TOTAL_LABEL + moreExpensiveCategory.getValue());
     }

@@ -1,6 +1,7 @@
 package com.movimentacaobancaria;
 
 import com.movimentacaobancaria.command.*;
+import com.movimentacaobancaria.helpers.PaymentMovementHelper;
 import com.movimentacaobancaria.usecase.*;
 import com.movimentacaobancaria.usecase.Strategy.GroupByCategoryStrategy;
 import com.movimentacaobancaria.usecase.Strategy.GroupByMonthStrategy;
@@ -11,11 +12,8 @@ public class App
 
         try {
             int option = getOptionFromArgs(args);
-            if(option < 0 || option > 6) {
-                return;
-            }
 
-            BankingMovementCommand command = new PrintTotalTransactionsCommand();
+            BankingMovementCommand command = new SendPostPaymentCommand();
             switch (option) {
                 case 1:
                     command = new PrintMovementsCommand();
@@ -32,14 +30,17 @@ public class App
                 case 5:
                     command = new PrintTotalSpentCommand();
                     break;
+                case 6:
+                    command = new PrintTotalTransactionsCommand();
+                    break;
                 default:
                     break;
             }
             command.execute();
         } catch (PaymentSourceException e) {
-            System.out.println(e.getFriendlyMessage());
+            PaymentMovementHelper.print(e.getFriendlyMessage());
         } catch (Exception e) {
-            System.out.println(e);
+            PaymentMovementHelper.print(e.fillInStackTrace().getMessage());
         }
     }
 
@@ -49,7 +50,7 @@ public class App
             try {
                 result = Integer.parseInt(args[0]);
             } catch (Exception e){
-                System.out.println(e.fillInStackTrace().getMessage());
+                PaymentMovementHelper.print(e.fillInStackTrace().getMessage());
             }
         }
         return  result;

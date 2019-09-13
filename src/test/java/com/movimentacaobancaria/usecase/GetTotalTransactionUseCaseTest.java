@@ -9,13 +9,13 @@ import static junit.framework.TestCase.assertEquals;
 @RunWith(MockitoJUnitRunner.class)
 public class GetTotalTransactionUseCaseTest {
 
-    private GetTotalTransactionsUseCase getTotalTransactionUseCase = new GetTotalTransactionsUseCase(new FileRepositoryMock());
+    private CollectTotalTransactionsUseCase getTotalTransactionUseCase = new CollectTotalTransactionsUseCase(new FileRepositoryMock());
 
     @Test
     public void dado_que_receba_uma_lista_pagamentos_deve_devolver_o_total_das_transacoes_somando_todas_as_entradas_como_valore_positivos() {
 
         try{
-            Double totalFromUseCase = getTotalTransactionUseCase.getTotalTransactios();
+            Double totalFromUseCase = getTotalTransactionUseCase.get();
             assertEquals(1189.5900000000001,totalFromUseCase);
 
         } catch (Exception e) {

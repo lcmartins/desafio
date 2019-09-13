@@ -12,7 +12,7 @@ public class CollectMoreExpensiveUseCase extends ExpensesSumaryUseCase {
         super(fileRepository);
     }
 
-    public Pair<String, Double> collectMoreExpensive(GroupExpenseStrategy groupExpenseStrategy) throws Exception {
+    public Pair<String, Double> get(GroupExpenseStrategy groupExpenseStrategy) throws Exception {
         Map<String, Double> expenses = this.groupPayments(groupExpenseStrategy);
         Pair<String, Double> moreExpensiveCategory = new Pair("", 0.0);
         for (Map.Entry<String, Double> category : expenses.entrySet()) {

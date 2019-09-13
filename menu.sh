@@ -1,33 +1,37 @@
 #!/usr/bin/env bash
 
 function printAllOrdered(){
-    java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 1
+    java -jar movimentacao_bancaria-1.0-SNAPSHOT-shaded.jar 1
 }
 
 function printAllGroupedByCategory(){
-    java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 2
+    java -jar movimentacao_bancaria-1.0-SNAPSHOT-shaded.jar 2
 }
 
 function printMoreExpensiveCategory(){
-    java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 3
+    java -jar movimentacao_bancaria-1.0-SNAPSHOT-shaded.jar 3
 }
 
 function printMoreExpensiveMonth(){
-    java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 4
+    java -jar movimentacao_bancaria-1.0-SNAPSHOT-shaded.jar 4
 }
 
 function printTotalExpended(){
-    java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 5
+    java -jar movimentacao_bancaria-1.0-SNAPSHOT-shaded.jar 5
 }
 
 function printTotalTransactions(){
-    java -jar movimentacao_bancaria-1.0-SNAPSHOT.jar 6
+    java -jar movimentacao_bancaria-1.0-SNAPSHOT-shaded.jar 6
 }
 
-function _showOptions () {
+function sendPosts() {
+   java -jar movimentacao_bancaria-1.0-SNAPSHOT-shaded.jar 7
+}
 
-    
-    while true 
+function showOptions () {
+
+
+    while true
     do
         clear
         echo "|||||||||||||||||||||||||||||                        |||||||||||||||||||||||||||||||||"
@@ -40,7 +44,8 @@ function _showOptions () {
         echo "4 - Imprimir mes com mais gastos"
         echo "5 - Imprimir total de gastos"
         echo "6 - Imprimir total de transações"
-        echo "7 - Sair"
+        echo "7 - Enviar post do arquivo de log"
+        echo "8 - Sair"
         echo ""
         echo "Digite a opção: "
         read option
@@ -52,11 +57,11 @@ function _showOptions () {
             4) printMoreExpensiveMonth; exit 0 ;;
             5) printTotalExpended; exit 0 ;;
             6) printTotalTransactions; exit 0 ;;
-            7)  echo "Fechou"; exit 0;;
+            7) sendPosts; exit 0 ;;
+            8)  echo "Fechou"; exit 0;;
             *)  echo "Fechou"; exit 10;;
         esac
     done
 }
 
-# Executa o metodo principal
-_showOptions
+showOptions
