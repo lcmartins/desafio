@@ -1,4 +1,4 @@
-package com.movimentacaobancaria.UseCase;
+package com.movimentacaobancaria.usecase;
 
 import javafx.util.Pair;
 

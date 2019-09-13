@@ -1,12 +1,9 @@
 package com.movimentacaobancaria;
 
-import com.movimentacaobancaria.Command.*;
-import com.movimentacaobancaria.UseCase.*;
-import com.movimentacaobancaria.UseCase.Strategy.GroupByCategoryStrategy;
-import com.movimentacaobancaria.UseCase.Strategy.GroupByMonthStrategy;
-import com.movimentacaobancaria.entities.BankingMovement;
-import com.movimentacaobancaria.repository.FileRepository;
-import java.util.List;
+import com.movimentacaobancaria.command.*;
+import com.movimentacaobancaria.usecase.*;
+import com.movimentacaobancaria.usecase.Strategy.GroupByCategoryStrategy;
+import com.movimentacaobancaria.usecase.Strategy.GroupByMonthStrategy;
 
 public class App 
 {
@@ -17,24 +14,23 @@ public class App
             if(option < 0 || option > 6) {
                 return;
             }
-            PaymentListUseCase paymentListUseCase = new PaymentListUseCase(new FileRepository());
-            List<BankingMovement> bankingMovements = paymentListUseCase.listPayments();
-            PaymentCommand command = new PrintTotalTransactionsCommand(bankingMovements);
+
+            BankingMovementCommand command = new PrintTotalTransactionsCommand();
             switch (option) {
                 case 1:
-                    command = new PrintMovementsCommand(bankingMovements);
+                    command = new PrintMovementsCommand();
                     break;
                 case 2:
-                    command = new PrintExpensesByCategoryCommand(bankingMovements);
+                    command = new PrintExpensesByCategoryCommand();
                     break;
                 case 3:
-                    command = new PrintMoreExpensiveCommand(bankingMovements, new GroupByCategoryStrategy());
+                    command = new PrintMoreExpensiveCommand(new GroupByCategoryStrategy());
                     break;
                 case 4:
-                    command = new PrintMoreExpensiveCommand(bankingMovements,  new GroupByMonthStrategy());
+                    command = new PrintMoreExpensiveCommand(new GroupByMonthStrategy());
                     break;
                 case 5:
-                    command = new PrintTotalSpentCommand(bankingMovements);
+                    command = new PrintTotalSpentCommand();
                     break;
                 default:
                     break;

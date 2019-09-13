@@ -1,24 +1,23 @@
-package com.movimentacaobancaria.Command;
+package com.movimentacaobancaria.command;
 
-import com.movimentacaobancaria.Helpers.PaymentMovementHelper;
-import com.movimentacaobancaria.UseCase.ExpensesSumaryUseCase;
-import com.movimentacaobancaria.UseCase.GetTotalSpentUseCase;
-import com.movimentacaobancaria.UseCase.Strategy.GroupByCategoryStrategy;
+import com.movimentacaobancaria.helpers.PaymentMovementHelper;
+import com.movimentacaobancaria.usecase.ExpensesSumaryUseCase;
+import com.movimentacaobancaria.usecase.GetTotalSpentUseCase;
+import com.movimentacaobancaria.usecase.Strategy.GroupByCategoryStrategy;
 import com.movimentacaobancaria.entities.BankingMovement;
 
 import java.util.List;
 import java.util.Map;
 
-public class PrintTotalSpentCommand extends PaymentCommand {
+public class PrintTotalSpentCommand extends BankingMovementCommand {
     private static final String CUSTOMER_TOTAL_SPENT = "CUSTOMER TOTAL EXPENSES: %s";
-    private List<BankingMovement> bankingMovements;
 
-    public PrintTotalSpentCommand(List<BankingMovement> bankingMovements) {
-        this.bankingMovements = bankingMovements;
+    public PrintTotalSpentCommand(){
     }
 
     @Override
-    public void execute() {
+    public void execute() throws Exception {
+        List<BankingMovement> bankingMovements = getBankingMovements();
         Map<String, Double> expenses = new ExpensesSumaryUseCase().group(bankingMovements, new GroupByCategoryStrategy());
         Double totalSpent = new GetTotalSpentUseCase().get(bankingMovements, expenses);
         PaymentMovementHelper.printHeader("   TOTAL SPENT");

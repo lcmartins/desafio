@@ -1,10 +1,10 @@
-package com.movimentacaobancaria.UseCase;
+package com.movimentacaobancaria.usecase;
 
 import com.movimentacaobancaria.entities.BankingMovement;
 
 import java.util.List;
 
-public class getTotalTransactionsUseCase {
+public class GetTotalTransactionsUseCase {
 
     public Double get(List<BankingMovement> bankingMovements ) {
         Double total = 0.0;

@@ -1,6 +1,6 @@
-package com.movimentacaobancaria.UseCase;
+package com.movimentacaobancaria.usecase;
 
-import com.movimentacaobancaria.Helpers.PaymentMovementHelper;
+import com.movimentacaobancaria.helpers.PaymentMovementHelper;
 import com.movimentacaobancaria.entities.BankingMovement;
 import com.movimentacaobancaria.entities.PaymentBankingMovement;
 import com.movimentacaobancaria.repository.IFileRepository;
@@ -34,7 +34,7 @@ public class PaymentListUseCase {
 
             BankingMovement bankingMovement;
 
-            if (isMovimentacaoPagamento(rawValue)) {
+            if (isReceipt(rawValue)) {
                 bankingMovement = new BankingMovement.Builder(rawDate)
                         .withDescription(descriptionValue)
                         .withValue(rawValue)
@@ -57,7 +57,7 @@ public class PaymentListUseCase {
         return bankingMovementResult;
     }
 
-    public boolean isMovimentacaoPagamento(String rawValue) {
+    public boolean isReceipt(String rawValue) {
         return Double.parseDouble(rawValue.replace(".","").replace(",", ".")) > 0.0;
     }
 }

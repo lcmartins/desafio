@@ -1,4 +1,4 @@
-package com.movimentacaobancaria.UseCase.Strategy;
+package com.movimentacaobancaria.usecase.Strategy;
 
 import com.movimentacaobancaria.entities.BankingMovement;
 

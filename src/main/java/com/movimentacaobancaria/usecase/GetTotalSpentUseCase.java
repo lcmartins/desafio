@@ -1,4 +1,4 @@
-package com.movimentacaobancaria.UseCase;
+package com.movimentacaobancaria.usecase;
 
 import com.movimentacaobancaria.entities.BankingMovement;
 import java.util.List;

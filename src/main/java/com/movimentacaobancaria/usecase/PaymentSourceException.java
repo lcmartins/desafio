@@ -1,4 +1,4 @@
-package com.movimentacaobancaria.UseCase;
+package com.movimentacaobancaria.usecase;
 
 public class PaymentSourceException extends RuntimeException {
     private static final String ERROR_READING_DATASOURCE = "Error reading datasource";

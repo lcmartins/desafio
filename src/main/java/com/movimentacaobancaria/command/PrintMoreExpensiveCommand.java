@@ -1,31 +1,30 @@
-package com.movimentacaobancaria.Command;
+package com.movimentacaobancaria.command;
 
-import com.movimentacaobancaria.Helpers.PaymentMovementHelper;
-import com.movimentacaobancaria.UseCase.ExpensesSumaryUseCase;
-import com.movimentacaobancaria.UseCase.GetMoreExpensiveCategoryUseCase;
-import com.movimentacaobancaria.UseCase.Strategy.GroupExpenseStrategy;
+import com.movimentacaobancaria.helpers.PaymentMovementHelper;
+import com.movimentacaobancaria.usecase.ExpensesSumaryUseCase;
+import com.movimentacaobancaria.usecase.GetMoreExpensiveCategoryUseCase;
+import com.movimentacaobancaria.usecase.Strategy.GroupExpenseStrategy;
 import com.movimentacaobancaria.entities.BankingMovement;
 import javafx.util.Pair;
 
 import java.util.List;
 import java.util.Map;
 
-public class PrintMoreExpensiveCommand extends PaymentCommand {
+public class PrintMoreExpensiveCommand extends BankingMovementCommand {
     private static final String TOTAL_LABEL = "TOTAL:            ";
-    private List<BankingMovement> bankingMovements;
     private GroupExpenseStrategy groupExpenseStrategy;
 
-    public PrintMoreExpensiveCommand(List<BankingMovement> bankingMovements, GroupExpenseStrategy groupExpenseStrategy) {
-        this.bankingMovements = bankingMovements;
+    public PrintMoreExpensiveCommand(GroupExpenseStrategy groupExpenseStrategy){
         this.groupExpenseStrategy = groupExpenseStrategy;
     }
 
     @Override
-    public void execute() {
-        Map<String, Double> expenses = getExpensesGroupedByCategory(this.bankingMovements, this.groupExpenseStrategy);
+    public void execute() throws Exception {
+        List<BankingMovement> bankingMovements = getBankingMovements();
+        Map<String, Double> expenses = getExpensesGroupedByCategory(bankingMovements, this.groupExpenseStrategy);
         Pair<String, Double> moreExpensiveCategory = new GetMoreExpensiveCategoryUseCase().collect(expenses);
         PaymentMovementHelper.printHeader("    " + groupExpenseStrategy.getCategoryDescription() + moreExpensiveCategory.getKey());
-        System.out.println(TOTAL_LABEL + moreExpensiveCategory.getValue());
+        PaymentMovementHelper.print(TOTAL_LABEL + moreExpensiveCategory.getValue());
     }
 
     private static Map<String, Double> getExpensesGroupedByCategory(List<BankingMovement> bankingMovements, GroupExpenseStrategy groupExpenseStrategy) {

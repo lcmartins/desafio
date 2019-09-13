@@ -1,4 +1,4 @@
-package com.movimentacaobancaria.Helpers;
+package com.movimentacaobancaria.helpers;
 
 import java.time.LocalDate;
 

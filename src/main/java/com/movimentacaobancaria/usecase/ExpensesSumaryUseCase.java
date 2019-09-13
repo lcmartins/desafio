@@ -1,6 +1,6 @@
-package com.movimentacaobancaria.UseCase;
+package com.movimentacaobancaria.usecase;
 
-import com.movimentacaobancaria.UseCase.Strategy.GroupExpenseStrategy;
+import com.movimentacaobancaria.usecase.Strategy.GroupExpenseStrategy;
 import com.movimentacaobancaria.entities.BankingMovement;
 import com.movimentacaobancaria.entities.PaymentBankingMovement;
 import java.text.Normalizer;
