@@ -16,10 +16,6 @@ public class PaymentListUseCase {
         this.paymentListGateway = new PaymentListGateway(this.repository);
     }
 
-    private String getIndexValue(String[] values, int index) {
-        return values.length > index ? values[index] : "";
-    }
-
     public List<BankingMovement> listPayments() throws IOException {
         List<BankingMovement> bankingMovementResult = this.paymentListGateway.listPayments();
         Collections.sort(bankingMovementResult);
