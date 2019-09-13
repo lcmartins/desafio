@@ -16,7 +16,8 @@ public class GetTotalTransactionUseCaseTest {
 
         try{
             Double totalFromUseCase = getTotalTransactionUseCase.getTotalTransactios();
-            assertEquals(totalFromUseCase, 759.1);
+            assertEquals(1189.5900000000001,totalFromUseCase);
+
         } catch (Exception e) {
             Assert.fail();
         }

@@ -14,7 +14,7 @@ public class PrintExpensesByCategoryCommand extends BankingMovementCommand {
     public void execute() throws Exception {
 
             Map<String, Double> expenses = new ExpensesSumaryUseCase(new FileRepository())
-                    .group(new GroupByCategoryStrategy());
+                    .groupPayments(new GroupByCategoryStrategy());
             printHeader();
             for (Map.Entry<String, Double> entry : expenses.entrySet()) {
                 PaymentMovementHelper.print(String.format(PRINT_PATTERN, entry.getKey(), entry.getValue()));

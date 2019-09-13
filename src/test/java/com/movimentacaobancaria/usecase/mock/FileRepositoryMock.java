@@ -19,6 +19,7 @@ public class FileRepositoryMock implements IFileRepository {
         String[] line4 = "17-Feb            TAM SITE                    -430,49             viagem".split(separatorPattern);
         String[] line5 = "21-May\t\t  Antonio Coutinho            120,00".split(separatorPattern);
         String[] line6 = "02-Jun\t\t  Jose Mota                   35".split(separatorPattern);
+        String[] line7 = "17-Feb            TAM SITE                    -430,49              ".split(separatorPattern);
         result.add(header);
         result.add(line1);
         result.add(line2);
@@ -26,6 +27,7 @@ public class FileRepositoryMock implements IFileRepository {
         result.add(line4);
         result.add(line5);
         result.add(line6);
+        result.add(line7);
         return result;
     }
 }

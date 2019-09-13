@@ -12,7 +12,7 @@ public class CollectTotalSpentUseCase extends ExpensesSumaryUseCase {
     }
 
     public Double collectTotalSpent(GroupExpenseStrategy groupExpenseStrategy) throws Exception {
-        Map<String, Double> expenses = this.group(groupExpenseStrategy);
+        Map<String, Double> expenses = this.groupPayments(groupExpenseStrategy);
         return expenses
                 .values()
                 .stream()

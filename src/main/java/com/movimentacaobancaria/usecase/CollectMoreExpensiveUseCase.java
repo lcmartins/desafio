@@ -13,7 +13,7 @@ public class CollectMoreExpensiveUseCase extends ExpensesSumaryUseCase {
     }
 
     public Pair<String, Double> collectMoreExpensive(GroupExpenseStrategy groupExpenseStrategy) throws Exception {
-        Map<String, Double> expenses = this.group(groupExpenseStrategy);
+        Map<String, Double> expenses = this.groupPayments(groupExpenseStrategy);
         Pair<String, Double> moreExpensiveCategory = new Pair("", 0.0);
         for (Map.Entry<String, Double> category : expenses.entrySet()) {
             String key = category.getKey().toUpperCase();

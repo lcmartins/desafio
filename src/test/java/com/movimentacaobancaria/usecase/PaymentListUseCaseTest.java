@@ -20,7 +20,7 @@ public class PaymentListUseCaseTest {
     public void dado_que_receba_uma_lista_de_array_de_pagamentos_como_strings_deve_compilar_estas_strings_em_pagamentos() {
         try {
             List<BankingMovement> payments = paymentListUseCase.listPayments();
-            Assert.assertEquals(6, payments.size());
+            Assert.assertEquals(7, payments.size());
         } catch (Exception e) {
             Assert.fail();
         }
@@ -41,7 +41,8 @@ public class PaymentListUseCaseTest {
             Assert.assertNotNull(payments.get(1).getCategoria());
             Assert.assertNotNull(payments.get(2).getCategoria());
             Assert.assertNotNull(payments.get(3).getCategoria());
-            Assert.assertEquals(4, payments.size());
+            Assert.assertNotNull(payments.get(4).getCategoria());
+            Assert.assertEquals(5, payments.size());
         } catch (Exception e) {
             Assert.fail();
         }

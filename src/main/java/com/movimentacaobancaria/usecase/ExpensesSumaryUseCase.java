@@ -23,7 +23,7 @@ public class ExpensesSumaryUseCase {
         this.paymentListGateway = new PaymentListGateway(this.fileRepository);
     }
 
-    public Map<String, Double> group(GroupExpenseStrategy groupExpenseStrategy) throws Exception {
+    public Map<String, Double> groupPayments(GroupExpenseStrategy groupExpenseStrategy) throws Exception {
         movements = this.paymentListGateway.listPayments();
         Map<String, Double> expenses = new HashMap<>();
 
