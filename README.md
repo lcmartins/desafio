@@ -16,5 +16,5 @@ A funcionalidade 2 (informar o total de gastos por categoria) e a funcionalidade
 
 Para a leitura do arquivo foi criado um repository (FileRepository) que implementa a interface IFileRepository (mesma usada nos testes).
 
-Nos testes criei uma interface de leitura de arquivo quem implementa a mesma interface utilizada no FileRepository
+Nos testes criei uma interface de leitura de arquivo que implementa a mesma interface utilizada no FileRepository
 
