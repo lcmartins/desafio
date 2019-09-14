@@ -18,3 +18,7 @@ Para a leitura do arquivo foi criado um repository (FileRepository) que implemen
 
 Nos testes criei uma interface de leitura de arquivo que implementa a mesma interface utilizada no FileRepository
 
+Para executar o projeto fazer uma chamada ao jar no console da seguinte forma:
+   java -jar movimentacao_bancaria-1.0-SNAPSHOT-shaded.jar 7
+   
+7 é uma das opções que podem ser passadas para o programa (pode-se passar de 1 a 7).
