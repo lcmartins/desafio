@@ -27,7 +27,7 @@ public class ExpensesSumaryUseCase {
         Map<String, Double> expenses = new HashMap<>();
 
         movements.stream().forEach(movement->{
-            if(isPayment(movement)) {
+            if(movement.isPayment()) {
                 PaymentBankingMovement paymentBankingMovement = (PaymentBankingMovement)movement;
                 String key = groupExpenseStrategy.getKey(paymentBankingMovement);
                 key = Normalizer
@@ -47,9 +47,5 @@ public class ExpensesSumaryUseCase {
         });
 
         return expenses;
-    }
-
-    private boolean isPayment(BankingMovement movement) {
-        return movement.getValor() < 0.0;
     }
 }

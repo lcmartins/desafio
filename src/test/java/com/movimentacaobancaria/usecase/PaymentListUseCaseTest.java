@@ -33,7 +33,7 @@ public class PaymentListUseCaseTest {
 
             List<PaymentBankingMovement> payments = new ArrayList<>();
             for (BankingMovement p : movements) {
-                if (p.getValor() < 0.0) {
+                if (p.isPayment()) {
                     payments.add((PaymentBankingMovement)p);
                 }
             }

@@ -69,6 +69,9 @@ public class BankingMovement implements Comparable<BankingMovement> {
         return this.getSortableDate().compareTo(other.getSortableDate());
     }
 
+    public boolean isPayment() {
+        return false;
+    }
     public static class Builder {
         private static final String MOEDA_PT_BR = "R$";
         private String data;

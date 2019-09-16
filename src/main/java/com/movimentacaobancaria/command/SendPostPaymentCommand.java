@@ -12,19 +12,21 @@ import java.util.Map;
 
 public class SendPostPaymentCommand extends BankingMovementCommand {
 
-    private static final String CREATING_PAYMENT_STATUS_CODE_FORMAT_MSG = "CREATING PAYMENT FOR SERVER: %s HAD STATUS CODE %S";
-    private static final String SENDINT_PAYMENTS_TO_BE_CREATED_WAIT_A_MINUTE_MSG = "  SENDING PAYMENTS TO BE CREATED, WAIT A MINUTE ...";
+    private static final String CREATING_PAYMENT_STATUS_CODE_FORMAT_MSG = " SENDING PAYMENTS | RECEIPTS TO BE CREATED, WAIT A MINUTE ...";
+    private static final String SENDING_PAYMENTS_TO_BE_CREATED_WAIT_A_MINUTE_MSG = "  **SENDING PAYMENT FOR SERVER: %s HAD STATUS CODE %S";
+    private static final String SENDING_RECEIPT_TO_BE_CREATED_WAIT_A_MINUTE_MSG = "  SENDING RECEIPT FOR SERVER: %s HAD STATUS CODE %S";
 
     @Override
     public void execute() throws Exception {
         List<BankingMovement> movementList = new PaymentListUseCase(new FileRepository())
                 .listPayments();
         PaymentsApiBoundary boundary = new PaymentsApiBoundary();
-        PaymentMovementHelper.printHeader(SENDINT_PAYMENTS_TO_BE_CREATED_WAIT_A_MINUTE_MSG);
+        PaymentMovementHelper.printHeader(CREATING_PAYMENT_STATUS_CODE_FORMAT_MSG);
         Map<BankingMovement, Integer> results = new SendBankinMovementsUseCase(boundary)
                 .savePayment(movementList);
         for (Map.Entry<BankingMovement, Integer> entry : results.entrySet()) {
-            PaymentMovementHelper.print(String.format(CREATING_PAYMENT_STATUS_CODE_FORMAT_MSG, entry.getKey().toString(), entry.getValue()));
+            final String message = entry.getKey().isPayment() ? SENDING_PAYMENTS_TO_BE_CREATED_WAIT_A_MINUTE_MSG :  SENDING_RECEIPT_TO_BE_CREATED_WAIT_A_MINUTE_MSG;
+            PaymentMovementHelper.print(String.format(message, entry.getKey().toString(), entry.getValue()));
         }
     }
 }

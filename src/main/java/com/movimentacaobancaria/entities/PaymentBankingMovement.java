@@ -70,4 +70,9 @@ public class PaymentBankingMovement extends BankingMovement {
                 ", \"categoria\":\"" + this.categoria + "\"" +
                 "}";
     }
+
+    @Override
+    public boolean isPayment() {
+        return true;
+    }
 }

@@ -23,7 +23,7 @@ public class PaymentsApiBoundary implements PaymentsApiBoundaryContract {
 
 
         try {
-            String url = bankingMovement.getValor() < 0.0 ? PAYMENTS_URL : RECEIPTS_URL;
+            String url = bankingMovement.isPayment() ? PAYMENTS_URL : RECEIPTS_URL;
             HttpPost httpPost = new HttpPost(url);
             String json = bankingMovement.toString();
 
