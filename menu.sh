@@ -25,7 +25,7 @@ function printTotalTransactions(){
 }
 
 function sendPosts() {
-   java -jar movimentacao_bancaria-1.0-SNAPSHOT-shaded.jar 7
+           java -jar movimentacao_bancaria-1.0-SNAPSHOT-shaded.jar 7
 }
 
 function showOptions () {

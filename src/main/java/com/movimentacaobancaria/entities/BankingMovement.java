@@ -56,6 +56,14 @@ public class BankingMovement implements Comparable<BankingMovement> {
                 "}";
     }
 
+    public String toScreen() {
+        return "[ \"data\":\"" + this.getData() + "\""+
+                "  |  \"descricao\":\"" + this.getDescricao()+ "\"" +
+                "  |  \"moeda\":\"" + this.getMoeda()+ "\"" +
+                "  |  \"valor\":\"" + this.getValor() + "\"" +
+                " ]";
+    }
+
     @Override
     public int compareTo(BankingMovement other) {
         return this.getSortableDate().compareTo(other.getSortableDate());

@@ -59,6 +59,7 @@ public class PaymentBankingMovement extends BankingMovement {
             return new PaymentBankingMovement(this.data, this.descricao, this.valor, this.categoria, this.moeda, this.sortableDate);
         }
     }
+
     @Override
     public String toString() {
         return  "{\"id\":\"" + this.getId() + "\"" +

@@ -13,6 +13,6 @@ public class PrintMovementsCommand extends BankingMovementCommand {
         PaymentListUseCase paymentListUseCase = new PaymentListUseCase(new FileRepository());
         List<BankingMovement> bankingMovements = paymentListUseCase.listPayments();
         PaymentMovementHelper.printHeader("   SORTING PAYMENTS: ");
-        bankingMovements.forEach(payment -> PaymentMovementHelper.print(payment.toString()));
+        bankingMovements.forEach(payment -> PaymentMovementHelper.print(payment.toScreen()));
     }
 }
