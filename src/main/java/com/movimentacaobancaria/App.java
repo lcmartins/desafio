@@ -8,7 +8,7 @@ import com.movimentacaobancaria.usecase.Strategy.GroupByMonthStrategy;
 
 public class App 
 {
-    public static void main(String[] args ) {
+    public static void main(final String[] args ) {
 
         try {
             int option = getOptionFromArgs(args);
@@ -44,7 +44,7 @@ public class App
         }
     }
 
-    private static int getOptionFromArgs(String[] args) {
+    private static int getOptionFromArgs(final String[] args) {
         int result = -1;
         if(args.length > 0) {
             try {
